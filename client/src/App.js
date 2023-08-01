@@ -1,29 +1,22 @@
 import './App.css';
 import Test from "./Test";
+import {Route, Routes} from "react-router-dom";
+import Heading from "./Component/Heading";
+import List from "./Component/List";
+import Upload from "./Component/Upload";
+import {useState} from "react";
 
 function App() {
-
-  let flag = true;
-  function CheckFlag(flag) {
-    if(flag) {
-      return "참입니다.";
-    } else {
-      return "거짓입니다."
-    }
-  }
-
-  return (
-      <div
-          style={{
-            display: "flex",
-            flexDirection : "column",
-            alignItems : "center",
-          }}>
-        <h1>Hello, React!</h1>
-        {/*{CheckFlag(flag)}*/}
-        <Test/>
-      </div>
-  );
+    const [ContentList, setContentList] = useState([]);
+    return (
+        <>
+            <Heading/>
+            <Routes>
+                <Route path="/list" element={<List ContentList={ContentList} setContentList={setContentList} />}/>
+                <Route path="/upload" element={<Upload ContentList={ContentList} setContentList={setContentList}/>}/>
+            </Routes>
+        </>
+    )
 }
 
 export default App;
