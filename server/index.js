@@ -12,14 +12,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //서버를 열고
-app.listen(port, () => {
-    mongoose
-        .connect("mongodb+srv://hwangyouna04:hwangyouna1234!@cluster0.rdbpqai.mongodb.net/?retryWrites=true&w=majority")
-        .then(() => {
-    console.log(`Example app listening at http://localhost:${port}`);
-    console.log("Connecting MongoDB...");
-    })
-})
+// app.listen(port, () => {
+//     mongoose
+//         // .connect("mongodb+srv://hwangyouna04:@cluster0.rdbpqai.mongodb.net/?retryWrites=true&w=majority")
+//         .then(() => {
+//     console.log(`Example app listening at http://localhost:${port}`);
+//     console.log("Connecting MongoDB...");
+//     })
+// })
 
 // 서버에 기능 구현
 app.get("/", (req, res) => {
