@@ -1,5 +1,4 @@
 import './App.css';
-import Test from "./Test";
 import {Route, Routes} from "react-router-dom";
 import Heading from "./Component/Heading";
 import List from "./Component/List";
